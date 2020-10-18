@@ -22,9 +22,13 @@ List of additional books, courses, blogs, and other places this repo is used/ref
 
 A publically available pre-created container image is available for download [here](https://hub.docker.com/repository/docker/nigelpoulton/getting-started-k8s)
 
-## Connect with me
+## INSTRUCTIONS to run (single pod):
+- docker image build -t nigelpoulton/getting-started-k8s:1.0 .
+- docker image push nigelpoulton/getting-started-k8s:1.0
+- cd Pods
+- kubectl apply -f pod.yml
+- kubectl get pods --watch or kubectl get pods -o wide
 
-I'm passionate about tech, and I'm all about making Kubernetes less scary!
-
-- Twitter: [@nigelpoulton](https://twitter.com/nigelpoulton)
-- LinkedIn: [Nigel Poulton](https://www.linkedin.com/in/nigelpoulton/)
+delete cluster:
+- kubectl delete -f pod.yml
+ 
